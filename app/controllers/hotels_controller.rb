@@ -7,18 +7,18 @@ class HotelsController < ApplicationController
   end
 
   def create
-    hotel = Hotel.create(
-      name: params[:hotel][:name],
-      address: params[:hotel][:address],
-      rating: params[:hotel][:rating]
-    )
+    hotel = Hotel.create(hotel_params)
 
     if hotel.persisted?
-      flash.notice = "Hotel created successfully"
+      redirect_to hotels_path, notice: "¡Hotel created successfully!"
     else
-      flash.alert = "Something went wrong"
+      redirect_to hotels_path, alert: "Something went wrong"
     end
+  end
 
-    redirect_to hotels_path
+  private
+
+  def hotel_params
+    params.require(:hotel).permit(:name, :address, :rating)
   end
 end
