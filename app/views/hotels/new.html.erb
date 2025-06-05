@@ -1,19 +1,18 @@
 <h4>
     CREATE HOTEL
 </h4>
-<form action="<%= hotels_path %>" method="post">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= form_with url: hotels_path, method: :post do |form| %>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input required type="text" class="form-control" name="hotel[name]" aria-describedby="emailHelp">
-        </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Address</label>
-        <input required type="text" class="form-control" name="hotel[address]">
+        <%= form.label :name, "Name", class: "form-label" %>
+        <%= form.text_field "hotel[name]", required: true, class: "form-control" %>
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Rating</label>
-        <input required type="number" class="form-control" name="hotel[rating]">
+        <%= form.label :address, "Address", class: "form-label" %>
+        <%= form.text_field "hotel[address]", required: true, class: "form-control" %>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <div class="mb-3">
+        <%= form.label :rating, "Rating", class: "form-label" %>
+        <%= form.number_field "hotel[rating]", required: true, class: "form-control" %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
