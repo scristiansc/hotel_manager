@@ -39,7 +39,6 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><%= link_to "CREATE HOTEL", new_hotel_path, class:"dropdown-item" %></li>
                 <li><%= link_to "VIEW ALL", hotels_path, class:"dropdown-item" %></li>
-                <li><a class="dropdown-item" href="#">VIEW ALL</a></li>
               </ul>
             </li>
           </ul>
@@ -50,13 +49,14 @@
       <% flash.each do |key, value| %>
         <% if flash[:notice].present? %>
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Congrats!</strong> ¡Hotel created successfully!
+            <strong>Congrats!</strong> <%= value %>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <% end %>
         <% if flash[:alert].present? %>
-          <div class="alert alert-danger" role="alert">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <%= value %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <% end %>
       <% end %>

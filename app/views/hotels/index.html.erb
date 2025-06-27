@@ -12,6 +12,7 @@
       <th scope="col">Name</th>
       <th scope="col">Address</th>
       <th scope="col">Rating</th>
+      <th scope="col" colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,9 @@
         <td><%= hotel.name.capitalize %></td>
         <td><%= hotel.address.capitalize %></td>
         <td><%= hotel.rating %></td>
+        <td><%= link_to "View", hotel_path(hotel) %></td>
+        <td><%= link_to "Update", edit_hotel_path(hotel) %></td>
+        <td><%= button_to "Delete", hotel_path(hotel), method: :delete %></td>
       </tr>
     <% end %>
 
