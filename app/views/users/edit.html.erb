@@ -1,0 +1,18 @@
+<h4>
+    UPDATE USER INFO
+</h4>
+<%= form_with url: user_path(@user), method: :put do |form| %>
+    <div class="mb-3">
+        <%= form.label :name, "Name", class: "form-label" %>
+        <%= form.text_field "user[name]", required: true, class: "form-control", value: @user.name %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :phone, "Phone", class: "form-label" %>
+        <%= form.text_field "user[phone]", required: true, class: "form-control", value: @user.phone %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :email, "Email", class: "form-label" %>
+        <%= form.email_field "user[email]", required: true, class: "form-control", value: @user.email %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
