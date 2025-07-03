@@ -7,3 +7,10 @@ db/schema.rb linguist-generated
 vendor/* linguist-vendored
 config/credentials/*.yml.enc diff=rails_credentials
 config/credentials.yml.enc diff=rails_credentials
+
+# Mark the yarn lockfile as having been generated.
+yarn.lock linguist-generated
+
+#Mark static files as non-primary programming languages.
+public/**/** linguist-vendored
+app/assets/**/** linguist-vendored
