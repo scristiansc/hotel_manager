@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :hotels
   resources :users
+  resources :rooms
 end
