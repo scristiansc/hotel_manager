@@ -1,0 +1,19 @@
+<h4></h4>
+    CREATE ROOM
+</h4>
+<%= form_with url: rooms_path, method: :post do |form| %>
+    <div class="mb-3">
+        <%= form.label :room_number, "Number", class: "form-label" %>
+        <%= form.text_field "room[room_number]", required: true, class: "form-control" %>
+    </div>
+     <div class="mb-3">
+    <%= form.label :room_type, "Room type", class: "form-label" %>
+    <%# Aquí es donde se agregan las opciones para el select %>
+    <%= form.select "room[room_type]", [['Sencilla', 'sencilla'], ['Doble', 'doble']], { prompt: "Selecciona un tipo" }, required: true, class: "form-control" %>
+  </div>
+    <div class="mb-3">
+        <%= form.label :price, "Price", class: "form-label" %>
+        <%= form.number_field "room[price]", required: true, class: "form-control" %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
