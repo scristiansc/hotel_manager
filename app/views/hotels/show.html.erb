@@ -3,3 +3,27 @@
 <p>Address: <%= @hotel.address %></p>
 <p>Rating: <%= @hotel.rating %></p>
 <p>Created At: <%= @hotel.created_at %></p>
+<h2>ROOMS:</h2>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+      <th scope="col">id</th>
+      <th scope="col">Number</th>
+      <th scope="col">Type</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @hotel.rooms.each do |room| %>
+      <tr>
+        <th scope="row"><%= room.id %></th>
+        <td><%= room.room_number %></td>
+        <td><%= room.room_type %></td>
+        <td><%= room.price %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>

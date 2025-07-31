@@ -9,12 +9,11 @@
     <div class="mb-3">
         <%= form.label :hotel_id, "Hotel", class: "form-label" %>
         <%= form.select "room[hotel_id]", Hotel.all.map { |hotel| [hotel.name.capitalize, hotel.id] } , { prompt: "Selecciona un hotel" }, required: true, class: "form-control" %>
-
     </div>
      <div class="mb-3">
     <%= form.label :room_type, "Room type", class: "form-label" %>
     <%# Aquí es donde se agregan las opciones para el select %>
-    <%= form.select "room[room_type]", [['Sencilla', 'sencilla'], ['Doble', 'doble']], { prompt: "Selecciona un tipo" }, required: true, class: "form-control" %>
+    <%= form.select "room[room_type]", Room.room_types.map { |key,value| [key.titleize,value] }, { prompt: "Selecciona un tipo" }, required: true, class: "form-control" %>
   </div>
     <div class="mb-3">
         <%= form.label :price, "Price", class: "form-label" %>
