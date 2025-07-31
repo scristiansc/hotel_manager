@@ -9,6 +9,7 @@
   <thead>
       <tr>
       <th scope="col">id</th>
+      <th scope="col">Hotel</th>
       <th scope="col">Number</th>
       <th scope="col">Type</th>
       <th scope="col">Price</th>
@@ -20,6 +21,7 @@
     <% @rooms.each do |room| %>
       <tr>
         <th scope="row"><%= room.id %></th>
+        <td><%= room.hotel.name %></td>
         <td><%= room.room_number.capitalize %></td>
         <td><%= room.room_type.capitalize %></td>
         <td><%= room.price %></td>
