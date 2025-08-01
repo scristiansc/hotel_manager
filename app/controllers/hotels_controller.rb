@@ -5,6 +5,7 @@ class HotelsController < ApplicationController
 
   def show
     @hotel = Hotel.find(params[:id])
+
   rescue ActiveRecord::RecordNotFound
     redirect_to hotels_path, alert: "Hotel no encontrado"
   end
