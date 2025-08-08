@@ -1,6 +1,5 @@
-<h4><%= @booking.room_id %></h4>
+<h4>Room: <%=@booking.room_id %></h4>
 
 <p>User: <%= @booking.user.name %></p>
-<p>Room number: <%= @booking.room_id %></p>
-<p>start date: <%= @booking.start_date %></p>
-<p>end date: <%= @booking.end_date %></p>
+<p>Start Date: <%= @booking.start_date.strftime ("%B %d, %Y %H:%M") %></p>
+<p>End Date: <%= @booking.end_date.strftime ("%B %d, %Y %H:%M") %></p>
