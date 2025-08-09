@@ -1,0 +1,22 @@
+<h4></h4>
+    UPDATE BOOKING
+</h4>
+<%= form_with url: booking_path(@booking), method: :put do |form| %>
+    <div class="mb-3">
+        <%= form.label :user_id, "User", class: "form-label" %>
+        <%= form.text_field "booking[user_id]", required: true, class: "form-control", value: @booking.user_id %>
+    </div>
+    #<div class="mb-3">
+    #<%= form.label :room_number, "Room Number", class: "form-label" %>
+    #<%= form.text_field "booking[address]", required: true, class: "form-control", value: @booking.address %>
+    #</div>
+    <div class="mb-3">
+        <%= form.label :start_date, "Check-in date", class: "form-label" %>
+        <%= form.number_field "booking[start_date]", required: true, class: "form-control", value: @booking.start_date %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :end_date, "Check-out date", class: "form-label" %>
+        <%= form.number_field "booking[end_date]", required: true, class: "form-control", value: @booking.end_date %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
